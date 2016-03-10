@@ -39,6 +39,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         sharedpreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        /*SharedPreferences.Editor edit= sharedpreferences.edit();
+
+        edit.clear();
+        edit.commit();*/
+
+
         String picturePath = sharedpreferences.getString(MYPROFILE, "");
         if(!picturePath.equals("")){
             ImageView imageView = (ImageView) findViewById(R.id.image_button);
@@ -103,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             edit.putString(MYPROFILE, picturePath);
             edit.commit();
+
 
         }
     }
